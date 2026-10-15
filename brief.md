@@ -1,3 +1,5 @@
 Version: NAFATH-V1
  AI
 ## Overview
+
+A national single sign-on service must provide secure, reliable access to multiple government services through both mobile apps and websites. Software standards define how users authenticate and how applications receive permission to access protected resources. AI can help identify unusual login patterns, but its decisions must be tested for accuracy, bias, privacy, and potential harm to legitimate users. Mobile security limits access to sensitive device features through runtime permissions, while secure networking helps protect communications and DNS queries from certain forms of monitoring or interference. Cybersecurity requires authentication methods that resist phishing, supported by strong identity verification and secure session management. Data governance ensures that citizens' personal information is collected, processed, stored, and protected lawfully. These fields must work together throughout design, deployment, and monitoring. For the AI track, the priority is managing risks before and after automated suspicious-login detection goes live.
