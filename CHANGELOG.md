@@ -3,4 +3,4 @@
 - cfd21ac research: software, ai, mobile
 - 6eda751 research: networking, cybersecurity, data
 - df6023e analysis: misconception and open question
-- 78cfa31 revise: overview
+- 78cfa31 revise: overview 
