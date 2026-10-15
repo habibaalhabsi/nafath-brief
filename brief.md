@@ -1,11 +1,8 @@
 Version: NAFATH-V1
  AI
 ## Overview
-
 A national single sign-on service must provide secure, reliable access to multiple government services through both mobile apps and websites. Software standards define how users authenticate and how applications receive permission to access protected resources. AI can help identify unusual login patterns, but its decisions must be tested for accuracy, bias, privacy, and potential harm to legitimate users. Mobile security limits access to sensitive device features through runtime permissions, while secure networking helps protect communications and DNS queries from certain forms of monitoring or interference. Cybersecurity requires authentication methods that resist phishing, supported by strong identity verification and secure session management. Data governance ensures that citizens' personal information is collected, processed, stored, and protected lawfully. These fields must work together throughout design, deployment, and monitoring. For the AI track, the priority is managing risks before and after automated suspicious-login detection goes live.
-
 ## Software
-
 OAuth 2.0 is an authorization framework that lets applications obtain limited access to protected resources using access tokens. OpenID Connect (OIDC) adds an identity layer on top of OAuth 2.0, allowing a client to verify a user's identity through an ID Token. Therefore, OAuth 2.0 is designed primarily for delegated access, while OpenID Connect is designed for user authentication and login. A national single sign-on service would normally use OIDC for login and OAuth 2.0 mechanisms to authorize access to services.
 Resource: OpenID Connect Core 1.0 - https://openid.net/specs/openid-connect-core-1_0.html
 ## AI
@@ -14,3 +11,12 @@ Resource: NIST AI RMF Core - https://airc.nist.gov/airmf-resources/airmf/5-sec-c
 ## Mobile
 Android apps run in a limited-access sandbox. Access to sensitive data or restricted device functions may require runtime permissions, which users can grant or deny. The login app should request a permission only when the user invokes a feature that needs it, explain the reason clearly, and check the permission before access. A basic login should avoid unnecessary access to contacts, location, the camera, or the microphone, and should continue safely when optional permissions are denied.
 Resource: Request runtime permissions - https://developer.android.com/training/permissions/requesting
+## Networking
+DNS over HTTPS (DoH) sends DNS queries and responses through HTTPS, protecting their confidentiality and integrity while they travel between the client and its chosen resolver. This can prevent local network observers from easily reading or altering DNS queries. However, DoH does not hide all browsing activity: the resolver can see queries, and destination IP addresses, website connections, or information exposed elsewhere may still reveal activity. DoH also does not replace HTTPS, endpoint security, or protection against malicious websites.
+Resource: RFC 8484: DNS Queries over HTTPS (DoH) - https://www.rfc-editor.org/info/rfc8484/
+## Cybersecurity
+Phishing-resistant authentication prevents authentication secrets or valid outputs from being disclosed to an impostor verifier, without depending on users recognising a fake website. FIDO2/WebAuthn passkeys with user verification and appropriately configured cryptographic security keys can provide this protection. Passwords, SMS codes, authenticator-app OTP codes, and manually entered one-time passwords are not phishing-resistant because attackers may relay the credentials or codes. Adding a second factor does not automatically make an authentication method phishing-resistant.
+Resource: NIST SP 800-63B: Authentication and Authenticator Management - https://pages.nist.gov/800-63-4/sp800-63b/authenticators/
+## Data
+Oman's Personal Data Protection Law, issued by Royal Decree 6/2022, and its Executive Regulation establish requirements for processing personal data. The authority should identify a lawful basis, provide required privacy information, collect only necessary data for specified purposes, maintain appropriate security, and respect applicable data-subject rights. It should also check requirements concerning consent, processing arrangements, retention, breach handling, and transfers of data outside Oman. The authority should confirm its exact obligations and any applicable exceptions with legal advisers before launch.
+Resource: Royal Decree 6/2022 Promulgating the Personal Data Protection Law and Ministerial Decision 34/2024 - https://prod.mtcit.gov.om/ITAPortal/MediaCenter/Document_Library.aspx
